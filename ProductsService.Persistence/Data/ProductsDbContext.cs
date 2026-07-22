@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ProductsService.Domain.Entities;  
+using ProductsService.Persistence.Data;
+
+namespace ProductsService.Persistence.Data
+{
+    public class ProductsDbContext : DbContext
+    {
+        public ProductsDbContext(DbContextOptions<ProductsDbContext> options) : base(options)
+        {
+        }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<User> Users { get; set; }
+
+    }
+}
